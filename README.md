@@ -2,6 +2,8 @@
 
 A slim PHP-first recreation of Simon Schneegans' Kando pie menu. This version keeps the interaction model and bold visuals, but removes build tooling and stays fully data-driven from a single `index.php`.
 
+---
+
 ## What you get
 - Radial action menu rendered from a PHP array
 - Hover/focus tooltip, per-item colors, and smooth reveal
