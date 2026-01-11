@@ -534,6 +534,10 @@ main.page {
   line-height: 1.6;
 }
 
+/* ==========================================
+   ORBITAL ANIMATIONS & ADVANCED EFFECTS
+   ========================================== */
+
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
