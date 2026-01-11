@@ -1,4 +1,5 @@
 (() => {
+  // Menu configuration and state management
   const shell = document.querySelector(".ring-shell");
   const ring = document.getElementById("kando-ring");
   const toggle = document.getElementById("menuToggle");
