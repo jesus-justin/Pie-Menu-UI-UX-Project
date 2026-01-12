@@ -239,6 +239,10 @@ $menuItems = [
                 font-size: 2.5rem;
             }
             
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+            
             .cta-buttons {
                 justify-content: center;
             }
