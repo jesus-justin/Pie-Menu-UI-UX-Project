@@ -4,6 +4,14 @@ A slim PHP-first recreation of Simon Schneegans' Kando pie menu. This version ke
 
 ---
 
+## Features
+- 🎨 Modern landing page with hero section
+- 🎯 Interactive radial pie menu with smooth animations
+- 📱 Fully responsive design (mobile, tablet, desktop)
+- ⌨️ Keyboard support: arrows to cycle, Enter/Space to activate, Escape to close
+- 🎪 Zero build step: vanilla PHP + JS + CSS
+- ♿ Accessibility-first design with focus states
+
 ## What you get
 - Radial action menu rendered from a PHP array
 - Hover/focus tooltip, per-item colors, and smooth reveal
