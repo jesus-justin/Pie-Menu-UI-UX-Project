@@ -125,6 +125,10 @@ $menuItems = [
             font-family: 'Space Grotesk', sans-serif;
         }
         
+        .btn:active {
+            transform: scale(0.98);
+        }
+        
         .btn-primary {
             background: white;
             color: #667eea;
