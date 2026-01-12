@@ -97,6 +97,8 @@ $menuItems = [
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.2;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.5px;
         }
         
         .hero-text p {
