@@ -187,6 +187,12 @@ $menuItems = [
             border-radius: 15px;
             text-align: center;
             transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .feature-card:focus-within {
+            outline: 2px solid #667eea;
+            outline-offset: 4px;
         }
         
         .feature-card:hover {
