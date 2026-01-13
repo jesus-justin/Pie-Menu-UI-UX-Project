@@ -14,6 +14,12 @@ define('PRIMARY_COLOR', '#667eea');
 define('SECONDARY_COLOR', '#764ba2');
 define('ACCENT_COLOR', '#6fffd2');
 
+// Database connection
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'pie_menu_unique');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+
 // Feature toggles
 define('SHOW_HERO_SECTION', true);
 define('SHOW_FEATURES_SECTION', true);
