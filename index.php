@@ -1,44 +1,3 @@
-<?php
-// Navigation menu items - customize labels, descriptions, and colors
-$menuItems = [
-    [
-        'label' => 'Home',
-        'description' => 'Return to the main page.',
-        'href' => '#home',
-        'color' => '#5de4c7',
-    ],
-    [
-        'label' => 'About',
-        'description' => 'Learn more about us.',
-        'href' => '#about',
-        'color' => '#7ec8ff',
-    ],
-    [
-        'label' => 'Services',
-        'description' => 'Explore what we offer.',
-        'href' => '#services',
-        'color' => '#ffd166',
-    ],
-    [
-        'label' => 'Portfolio',
-        'description' => 'View our featured work.',
-        'href' => '#portfolio',
-        'color' => '#f7a8ff',
-    ],
-    [
-        'label' => 'Contact',
-        'description' => 'Get in touch with us.',
-        'href' => '#contact',
-        'color' => '#9ae66e',
-    ],
-    [
-        'label' => 'Blog',
-        'description' => 'Read our latest articles.',
-        'href' => '#blog',
-        'color' => '#ffa38f',
-    ],
-];
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -112,192 +71,61 @@ $menuItems = [
             line-height: 1.6;
         }
         
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 14px 32px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        
-        .btn:active {
-            transform: scale(0.98);
-        }
-        
-        .btn-primary {
-            background: white;
-            color: #667eea;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .btn-secondary {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.3);
-        }
-        
-        .hero-visual {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 500px;
-        }
-        
-        .menu-container {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .features-section {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 60px 20px;
-            margin-top: 40px;
-        }
-        
-        .features-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            background: rgba(255,255,255,0.95);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .feature-card:focus-within {
-            outline: 2px solid #667eea;
-            outline-offset: 4px;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-        
-        .feature-card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-        
-        .feature-card p {
-            color: #555;
-            line-height: 1.6;
-        }
-        
-        .instruction-text {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255,255,255,0.95);
-            padding: 12px 24px;
-            border-radius: 30px;
-            color: #667eea;
-            font-weight: 600;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: translateX(-50%) scale(1); }
-            50% { transform: translateX(-50%) scale(1.05); }
-        }
-        
+        .cta-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+        .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; min-height: 380px; }
+        .info-list { margin: 0; padding-left: 18px; color: #e8edff; line-height: 1.6; }
+        .info-list li + li { margin-top: 8px; }
+        .features-section { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 60px 20px; margin-top: 40px; }
+        .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .feature-card { background: rgba(255,255,255,0.95); padding: 30px; border-radius: 15px; text-align: center; transition: transform 0.3s ease; cursor: pointer; }
+        .feature-card:focus-within { outline: 2px solid #667eea; outline-offset: 4px; }
+        .feature-card:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 3rem; margin-bottom: 15px; }
+        .feature-card h3 { color: #667eea; margin-bottom: 10px; font-size: 1.3rem; }
+        .feature-card p { color: #555; line-height: 1.6; }
         @media (max-width: 968px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-text p {
-                font-size: 1.1rem;
-            }
-            
-            .cta-buttons {
-                justify-content: center;
-            }
+            .hero-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-text p { font-size: 1.1rem; }
+            .cta-buttons { justify-content: center; }
         }
     </style>
 </head>
 <body>
+    <header class="top-nav">
+        <div class="brand"><span class="brand-dot"></span>Pie Menu</div>
+        <nav class="nav-links">
+            <a href="home.php">Home</a>
+            <a class="pill-link" href="login.php">Login</a>
+            <a class="pill-link" href="register.php">Register</a>
+        </nav>
+    </header>
     <div class="landing-container">
         <section class="hero-section">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Welcome to Your Next Experience</h1>
-                    <p>Discover a revolutionary way to navigate. Our intuitive pie menu puts everything at your fingertips with style and efficiency.</p>
+                    <div class="badge">Welcome</div>
+                    <h1>Sign in or register to explore</h1>
+                    <p>Login or create an account to access the new home page where the interactive pie menu now lives.</p>
                     <div class="cta-buttons">
-                        <button class="btn btn-primary" onclick="document.getElementById('menuToggle').click()">Try It Now</button>
-                        <button class="btn btn-secondary" onclick="alert('Learn more about our features!')">Learn More</button>
+                        <a class="btn btn-primary" href="login.php">Login</a>
+                        <a class="btn btn-secondary" href="register.php">Register</a>
+                        <a class="pill-link" href="home.php">View Home & Menu</a>
                     </div>
                 </div>
                 
                 <div class="hero-visual">
-                    <div class="menu-container">
-                        <div class="instruction-text">👆 Click the menu button</div>
-                        <div class="ring-shell" data-open="false">
-                            <div class="ring-axis"></div>
-                            <button class="menu-toggle" aria-expanded="false" aria-controls="kando-ring" id="menuToggle">
-                                <div class="toggle-icon">
-                                    <span class="icon-bar bar-1"></span>
-                                    <span class="icon-bar bar-2"></span>
-                                    <span class="icon-bar bar-3"></span>
-                                    <div class="icon-glow"></div>
-                                </div>
-                                <div class="toggle-content" style="display: none;">
-                                    <span class="toggle-label">Open menu</span>
-                                    <span class="toggle-sub">6 focusable actions</span>
-                                </div>
-                                <div class="toggle-shimmer"></div>
-                            </button>
-                            <div class="menu-label">MENU</div>
-                            <div class="menu-center" aria-live="polite" style="display: none;">
-                                <p class="center-eyebrow">Selected</p>
-                                <h3 id="centerTitle">Open menu</h3>
-                                <p id="centerDesc">Press the toggle to explore the actions.</p>
-                            </div>
-                            <div id="kando-ring" class="menu-ring" role="navigation" aria-label="Primary actions"></div>
-                            <div class="menu-tooltip" id="menuTooltip" role="status" aria-live="polite" style="display: none;"></div>
+                    <div class="card-soft">
+                        <h3>What changed?</h3>
+                        <ul class="info-list">
+                            <li>Menu button moved to the dedicated <strong>Home</strong> page.</li>
+                            <li>Landing CTA now routes to <strong>Login</strong> and <strong>Register</strong>.</li>
+                            <li>Credentials are validated against the MySQL users table.</li>
+                        </ul>
+                        <div class="feature-grid-simple">
+                            <div class="feature-chip">Secure credential checks</div>
+                            <div class="feature-chip">Password hashing</div>
+                            <div class="feature-chip">Smooth navigation</div>
                         </div>
                     </div>
                 </div>
@@ -329,10 +157,5 @@ $menuItems = [
             </div>
         </section>
     </div>
-
-    <script>
-        window.KANDO_MENU = <?php echo json_encode($menuItems, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>;
-    </script>
-    <script src="assets/js/menu.js"></script>
 </body>
 </html>
