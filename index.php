@@ -121,6 +121,15 @@
             filter: drop-shadow(0 10px 20px rgba(102, 126, 234, 0.3));
         }
         
+        .hero-text h1 {
+            letter-spacing: -1px;
+            word-spacing: 0.1em;
+        }
+        
+        .hero-text h1::first-line {
+            line-height: 1.1;
+        }
+        
         .hero-text p {
             font-size: 1.25rem;
             margin-bottom: 30px;
@@ -198,6 +207,16 @@
         .card-soft h3 {
             position: relative;
             z-index: 1;
+            font-size: 1.3rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ffffff, #cfd9f2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-soft p, .info-list {
+            font-weight: 500;
         }
         .features-section { 
             background: rgba(255,255,255,0.05); 
