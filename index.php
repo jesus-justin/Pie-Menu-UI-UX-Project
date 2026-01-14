@@ -346,6 +346,81 @@
             position: relative;
             z-index: 1;
         }
+        
+        /* ============================
+           Header Navigation Styling
+           ============================ */
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 22px;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 16px;
+            position: relative;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .brand {
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            animation: brandPulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes brandPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .brand-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6fffd2, #7ec8ff);
+            display: inline-block;
+            animation: dotSpin 4s linear infinite;
+        }
+        
+        @keyframes dotSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(102, 126, 234, 0.5);
+            outline: none;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+        
         @media (max-width: 968px) {
             .hero-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .hero-text h1 { font-size: 2.5rem; }
