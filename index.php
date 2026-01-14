@@ -103,7 +103,36 @@
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
         
-        @keyframes fadeInUp {
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #ffffff, #e8edff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .hero-text h1:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 10px 20px rgba(102, 126, 234, 0.3));
+        }
+        
+        .hero-text p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-text p:hover {
+            opacity: 1;
+            transform: translateX(5px);
+        }
             from {
                 opacity: 0;
                 transform: translateY(30px);
