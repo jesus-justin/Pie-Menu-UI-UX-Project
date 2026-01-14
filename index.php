@@ -27,12 +27,36 @@
             animation: gradientShift 15s ease infinite;
             min-height: 100vh;
             overflow-x: hidden;
+            color: #f0f4ff;
         }
         
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+        
+        /* Enhanced dark mode colors */
+        ::selection {
+            background: rgba(102, 126, 234, 0.3);
+            color: #ffffff;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(102, 126, 234, 0.5);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(102, 126, 234, 0.8);
         }
         
         .landing-container {
