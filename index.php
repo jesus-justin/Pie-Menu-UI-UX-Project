@@ -119,7 +119,19 @@
             padding: 50px 40px;
             border-radius: 25px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.15),
+                0 0 40px rgba(102, 126, 234, 0.1) inset,
+                0 0 60px rgba(231, 60, 126, 0.05);
+            transition: all 0.4s ease;
+        }
+        
+        .hero-content:hover {
+            box-shadow: 
+                0 12px 48px rgba(0, 0, 0, 0.2),
+                0 0 60px rgba(102, 126, 234, 0.15) inset,
+                0 0 80px rgba(231, 60, 126, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
         }
         
         .hero-text {
@@ -210,6 +222,17 @@
             backdrop-filter: blur(10px);
             padding: 25px;
             border-radius: 20px;
+            box-shadow: 
+                0 8px 24px rgba(0, 0, 0, 0.2),
+                0 0 30px rgba(102, 126, 234, 0.08) inset;
+            transition: all 0.3s ease;
+        }
+        
+        .card-soft:hover {
+            box-shadow: 
+                0 12px 32px rgba(0, 0, 0, 0.3),
+                0 0 40px rgba(102, 126, 234, 0.12) inset;
+            transform: translateY(-4px);
         }
         
         .card-soft::before {
