@@ -286,6 +286,45 @@
             .hero-text p { font-size: 1.1rem; }
             .cta-buttons { justify-content: center; }
         }
+        
+        /* Floating decoration elements */
+        .floating-orb {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15), transparent);
+            pointer-events: none;
+            filter: blur(40px);
+        }
+        
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+            animation: floatOrb1 20s ease-in-out infinite;
+        }
+        
+        .orb-2 {
+            width: 250px;
+            height: 250px;
+            bottom: 20%;
+            right: 5%;
+            animation: floatOrb2 25s ease-in-out infinite;
+        }
+        
+        @keyframes floatOrb1 {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(50px, -50px); }
+            50% { transform: translate(100px, 0); }
+            75% { transform: translate(50px, 50px); }
+        }
+        
+        @keyframes floatOrb2 {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-50px, 50px); }
+            50% { transform: translate(-100px, 0); }
+            75% { transform: translate(-50px, -50px); }
+        }
     </style>
 </head>
 <body>
