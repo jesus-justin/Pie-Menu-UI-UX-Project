@@ -124,6 +124,37 @@
         }
         .info-list { margin: 0; padding-left: 18px; color: #e8edff; line-height: 1.6; }
         .info-list li + li { margin-top: 8px; }
+        
+        .card-soft {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+        }
+        
+        .card-soft::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        
+        .card-soft h3 {
+            position: relative;
+            z-index: 1;
+        }
         .features-section { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 60px 20px; margin-top: 40px; }
         .features-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .feature-card { background: rgba(255,255,255,0.95); padding: 30px; border-radius: 15px; text-align: center; transition: transform 0.3s ease; cursor: pointer; }
