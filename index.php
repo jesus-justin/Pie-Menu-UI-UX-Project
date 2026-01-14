@@ -121,6 +121,21 @@
             justify-content: center; 
             min-height: 380px;
             animation: fadeInUp 0.8s ease-out 0.4s both;
+            perspective: 1000px;
+        }
+        
+        .hero-visual > div {
+            transform-style: preserve-3d;
+            animation: parallaxFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes parallaxFloat {
+            0%, 100% {
+                transform: translateY(0px) rotateZ(-2deg) translateZ(50px);
+            }
+            50% {
+                transform: translateY(-40px) rotateZ(2deg) translateZ(80px);
+            }
         }
         .info-list { margin: 0; padding-left: 18px; color: #e8edff; line-height: 1.6; }
         .info-list li + li { margin-top: 8px; }
