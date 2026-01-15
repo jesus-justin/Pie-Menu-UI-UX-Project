@@ -214,7 +214,29 @@
                 transform: translateY(-40px) rotateZ(2deg) translateZ(80px);
             }
         }
-        .info-list { margin: 0; padding-left: 18px; color: #e8edff; line-height: 1.6; }
+        .info-list { 
+            margin: 0; 
+            padding-left: 18px; 
+            color: #e8edff; 
+            line-height: 1.8;
+        }
+        
+        .info-list li { 
+            margin-bottom: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .info-list li:hover {
+            color: #ffffff;
+            transform: translateX(8px);
+        }
+        
+        .info-list li strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+        
         .info-list li + li { margin-top: 8px; }
         
         /* Stagger animations for button group */
