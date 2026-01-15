@@ -505,6 +505,39 @@
             box-shadow: 0 4px 16px rgba(102, 126, 234, 0.25);
         }
         
+        /* ============================
+           Badge Styling & Animation
+           ============================ */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 2px solid rgba(102, 126, 234, 0.4);
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            margin-bottom: 20px;
+            animation: badgePulse 2.5s ease-in-out infinite, badgeBounce 3s ease-in-out infinite;
+            color: #e8edff;
+            font-size: 0.95rem;
+        }
+        
+        @keyframes badgePulse {
+            0%, 100% { 
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4);
+            }
+            50% { 
+                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+            }
+        }
+        
+        @keyframes badgeBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
         @media (max-width: 968px) {
             .hero-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .hero-text h1 { font-size: 2.5rem; }
