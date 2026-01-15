@@ -178,6 +178,8 @@
             opacity: 1;
             transform: translateX(5px);
         }
+        
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
