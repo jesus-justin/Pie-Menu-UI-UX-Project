@@ -584,6 +584,35 @@
             box-shadow: 0 6px 16px rgba(102, 126, 234, 0.2);
         }
         
+        /* ============================
+           Scroll Animation Classes
+           ============================ */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .feature-card.scroll-reveal.visible {
+            animation: scaleReveal 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        
+        @keyframes scaleReveal {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
         @media (max-width: 968px) {
             .hero-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .hero-text h1 { font-size: 2.5rem; }
@@ -697,5 +726,34 @@
             </div>
         </section>
     </div>
+    
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all feature cards for scroll reveal
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.classList.add('scroll-reveal');
+            observer.observe(card);
+        });
+        
+        // Observe features section
+        const featuresSection = document.querySelector('.features-section');
+        if (featuresSection) {
+            featuresSection.classList.add('scroll-reveal');
+            observer.observe(featuresSection);
+        }
+    </script>
 </body>
 </html>
