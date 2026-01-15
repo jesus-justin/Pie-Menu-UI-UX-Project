@@ -538,6 +538,52 @@
             50% { transform: translateY(-5px); }
         }
         
+        /* ============================
+           Feature Chips Styling
+           ============================ */
+        .feature-grid-simple {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 24px;
+        }
+        
+        .feature-chip {
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.08));
+            color: #e8edff;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-chip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .feature-chip:hover::before {
+            left: 100%;
+        }
+        
+        .feature-chip:hover {
+            border-color: rgba(102, 126, 234, 0.7);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.12));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.2);
+        }
+        
         @media (max-width: 968px) {
             .hero-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
             .hero-text h1 { font-size: 2.5rem; }
