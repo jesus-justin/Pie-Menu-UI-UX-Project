@@ -151,20 +151,20 @@
             background-clip: text;
             transition: all 0.3s ease;
             cursor: pointer;
-        }
-        
-        .hero-text h1:hover {
-            transform: scale(1.03);
-            filter: drop-shadow(0 10px 20px rgba(102, 126, 234, 0.3));
-        }
-        
-        .hero-text h1 {
+            text-shadow: 
+                0 20px 40px rgba(102, 126, 234, 0.2),
+                0 10px 20px rgba(231, 60, 126, 0.15);
             letter-spacing: -1px;
             word-spacing: 0.1em;
         }
         
         .hero-text h1::first-line {
             line-height: 1.1;
+        }
+        
+        .hero-text h1:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0 10px 20px rgba(102, 126, 234, 0.3));
         }
         
         .hero-text p {
