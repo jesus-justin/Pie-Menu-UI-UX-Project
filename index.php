@@ -731,6 +731,58 @@
             50% { transform: translate(-100px, 0); }
             75% { transform: translate(-50px, -50px); }
         }
+        
+        /* ============================
+           Footer Styling
+           ============================ */
+        .footer {
+            background: rgba(255, 255, 255, 0.04);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 20px;
+            text-align: center;
+            color: #a0aac0;
+            font-size: 0.95rem;
+            margin-top: 80px;
+        }
+        
+        .footer p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #d1dcf3;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .footer-links a:hover {
+            color: #667eea;
+        }
+        
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -799,6 +851,18 @@
             </div>
         </section>
     </div>
+    
+    <footer class="footer">
+        <p>&copy; 2026 Pie Menu UI/UX Project. Crafted with innovation and care.</p>
+        <div class="footer-links">
+            <a href="home.php">Home</a>
+            <a href="login.php">Login</a>
+            <a href="register.php">Register</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.85rem;">Designed for elegant navigation experiences</p>
+    </footer>
     
     <script>
         // Intersection Observer for scroll animations
