@@ -614,10 +614,70 @@
         }
         
         @media (max-width: 968px) {
-            .hero-content { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-            .hero-text h1 { font-size: 2.5rem; }
-            .hero-text p { font-size: 1.1rem; }
-            .cta-buttons { justify-content: center; }
+            .hero-content { 
+                grid-template-columns: 1fr; 
+                gap: 40px; 
+                text-align: center;
+                padding: 40px 30px;
+            }
+            .hero-text h1 { 
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+            }
+            .hero-text p { 
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+            .cta-buttons { 
+                justify-content: center;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn {
+                width: 100%;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-section {
+                padding: 30px 15px;
+            }
+            .top-nav {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .nav-links {
+                width: 100%;
+                justify-content: space-around;
+                gap: 8px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            .hero-text p {
+                font-size: 0.95rem;
+            }
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.95rem;
+            }
+            .feature-grid-simple {
+                grid-template-columns: 1fr;
+            }
+            .feature-chip {
+                font-size: 0.85rem;
+                padding: 10px 12px;
+            }
+            .features-section {
+                padding: 40px 15px;
+            }
+            .hero-section::before,
+            .hero-section::after {
+                display: none;
+            }
         }
         
         /* Floating decoration elements */
