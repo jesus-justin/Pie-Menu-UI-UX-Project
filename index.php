@@ -72,6 +72,7 @@
             justify-content: center;
             padding: 40px 20px;
             position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
         
         .hero-section::before {
@@ -272,7 +273,19 @@
             backdrop-filter: blur(10px); 
             padding: 60px 20px; 
             margin-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 2px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+        }
+        
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
         }
         .features-grid { 
             max-width: 1200px; 
