@@ -217,6 +217,30 @@
         .info-list { margin: 0; padding-left: 18px; color: #e8edff; line-height: 1.6; }
         .info-list li + li { margin-top: 8px; }
         
+        /* Stagger animations for button group */
+        .cta-buttons .btn:nth-child(1) {
+            animation: slideInButton 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+        }
+        
+        .cta-buttons .btn:nth-child(2) {
+            animation: slideInButton 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both;
+        }
+        
+        .cta-buttons .btn:nth-child(3) {
+            animation: slideInButton 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both;
+        }
+        
+        @keyframes slideInButton {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
         .card-soft {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
             border: 2px solid transparent;
@@ -469,8 +493,6 @@
             width: 300px;
             height: 300px;
         }
-        
-        .btn-primary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
