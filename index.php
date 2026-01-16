@@ -335,6 +335,18 @@
             right: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
+            animation: waveShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes waveShift {
+            0%, 100% {
+                transform: translateX(-100px);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateX(100px);
+                opacity: 1;
+            }
         }
         .features-grid { 
             max-width: 1200px; 
