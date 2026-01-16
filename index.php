@@ -928,6 +928,28 @@
         @keyframes loaderSpin {
             to { transform: rotate(360deg); }
         }
+        
+        /* ============================
+           Enhanced Focus States
+           ============================ */
+        *:focus-visible {
+            outline: 3px solid rgba(102, 126, 234, 0.8);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+        
+        .btn:focus-visible,
+        .pill-link:focus-visible,
+        .nav-links a:focus-visible {
+            outline: 3px solid rgba(102, 126, 234, 1);
+            outline-offset: 4px;
+        }
+        
+        .feature-card:focus-visible {
+            outline: 3px solid #667eea;
+            outline-offset: 6px;
+            transform: translateY(-10px);
+        }
     </style>
 </head>
 <body>
