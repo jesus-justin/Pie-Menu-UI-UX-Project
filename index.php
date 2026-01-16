@@ -348,6 +348,33 @@
                 opacity: 1;
             }
         }
+        
+        /* ============================
+           Micro-interactions
+           ============================ */
+        .hero-content:active {
+            transform: scale(0.995);
+        }
+        
+        .btn:active {
+            transform: scale(0.95);
+        }
+        
+        .feature-chip:active {
+            transform: translateY(-3px) scale(0.95);
+        }
+        
+        .pill-link:active {
+            transform: translateY(-2px) scale(0.95);
+        }
+        
+        .nav-links a:active {
+            transform: translateY(1px);
+        }
+        
+        .brand:active {
+            transform: scale(0.98);
+        }
         .features-grid { 
             max-width: 1200px; 
             margin: 0 auto; 
