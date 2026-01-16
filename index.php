@@ -275,13 +275,14 @@
                 0 8px 24px rgba(0, 0, 0, 0.2),
                 0 0 30px rgba(102, 126, 234, 0.08) inset;
             transition: all 0.3s ease;
+            transform-style: preserve-3d;
         }
         
         .card-soft:hover {
             box-shadow: 
                 0 12px 32px rgba(0, 0, 0, 0.3),
                 0 0 40px rgba(102, 126, 234, 0.12) inset;
-            transform: translateY(-4px);
+            transform: translateY(-4px) rotateX(5deg) rotateY(-5deg);
         }
         
         .card-soft::before {
