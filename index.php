@@ -382,6 +382,13 @@
             font-size: 3rem; 
             margin-bottom: 15px;
             animation: iconBounce 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotate(360deg) scale(1.2);
+            animation: none;
         }
         
         .feature-card:nth-child(1) .feature-icon { animation-delay: 0s; }
