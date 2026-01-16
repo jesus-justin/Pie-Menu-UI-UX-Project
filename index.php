@@ -436,6 +436,13 @@
             align-items: center;
             gap: 8px;
             animation: brandPulse 3s ease-in-out infinite;
+            text-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .brand:hover {
+            text-shadow: 0 0 30px rgba(102, 126, 234, 0.8);
+            transform: scale(1.05);
         }
         
         @keyframes brandPulse {
@@ -450,6 +457,7 @@
             background: linear-gradient(135deg, #6fffd2, #7ec8ff);
             display: inline-block;
             animation: dotSpin 4s linear infinite;
+            box-shadow: 0 0 15px rgba(111, 255, 210, 0.6);
         }
         
         @keyframes dotSpin {
