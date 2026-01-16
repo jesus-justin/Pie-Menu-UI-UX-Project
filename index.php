@@ -989,9 +989,27 @@
             outline-offset: 6px;
             transform: translateY(-10px);
         }
+        
+        /* ============================
+           Scroll Progress Indicator
+           ============================ */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #23a6d5);
+            z-index: 9998;
+            transition: width 0.1s ease;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.5);
+        }
     </style>
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+    
     <!-- Page Loader -->
     <div class="page-loader">
         <div class="loader-spinner"></div>
@@ -1090,6 +1108,15 @@
             setTimeout(() => {
                 loader.classList.add('hidden');
             }, 500);
+        });
+        
+        // Scroll progress indicator
+        const scrollProgress = document.querySelector('.scroll-progress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = progress + '%';
         });
         
         // Intersection Observer for scroll animations
