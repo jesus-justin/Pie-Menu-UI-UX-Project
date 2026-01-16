@@ -14,6 +14,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: color 0.3s ease, background-color 0.3s ease;
         }
         
         html {
@@ -28,6 +29,7 @@
             min-height: 100vh;
             overflow-x: hidden;
             color: #f0f4ff;
+            transition: background-color 0.5s ease;
         }
         
         @keyframes gradientShift {
