@@ -479,6 +479,24 @@
             transition: all 0.3s ease;
             border: 1px solid transparent;
             font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 14px;
+            right: 14px;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-links a:hover::before,
+        .nav-links a:focus-visible::before {
+            transform: scaleX(1);
         }
         
         .cta-buttons { 
