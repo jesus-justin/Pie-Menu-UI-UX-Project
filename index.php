@@ -827,9 +827,55 @@
         .footer-links a:hover::after {
             width: 100%;
         }
+        
+        /* ============================
+           Animated Particles Background
+           ============================ */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleFloat 15s linear infinite;
+            z-index: 0;
+        }
+        
+        .particle:nth-child(1) { left: 10%; animation-duration: 12s; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 25%; animation-duration: 18s; animation-delay: 2s; }
+        .particle:nth-child(3) { left: 40%; animation-duration: 15s; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 60%; animation-duration: 20s; animation-delay: 1s; }
+        .particle:nth-child(5) { left: 75%; animation-duration: 16s; animation-delay: 3s; }
+        .particle:nth-child(6) { left: 90%; animation-duration: 14s; animation-delay: 5s; }
+        
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) scale(1.5);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Animated background particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    
     <header class="top-nav">
         <div class="brand"><span class="brand-dot"></span>Pie Menu</div>
         <nav class="nav-links">
