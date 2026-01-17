@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [1.0.0] - 2026-01-12
+## [1.1.0] - 2026-01-17
+
+### Added
+- Login and Register pages with session-based authentication
+- `home.php` hosting the pie menu demo, gated behind login
+- Database schema `pie_menu_unique.sql` and PDO helper `db.php`
+- Logout endpoint to end sessions cleanly
+- Navigation and auth form styles in CSS
+
+### Changed
+- Landing page now routes to auth actions; pie menu moved to Home
+- README updated with DB setup and auth flow
+
+### Security
+- Input trimming and username format restrictions
+- Session fixation prevention on successful login
 
 ### Added
 - Modern landing page with hero section and call-to-action buttons
