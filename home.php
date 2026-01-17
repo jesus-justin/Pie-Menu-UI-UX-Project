@@ -51,6 +51,7 @@ $menuItems = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Pie menu home page" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>Home - Pie Menu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -180,5 +181,8 @@ $menuItems = [
         window.KANDO_MENU = <?php echo json_encode($menuItems, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>;
     </script>
     <script src="assets/js/menu.js"></script>
+    <footer class="site-footer" style="margin-top:40px; padding:20px; text-align:center; color:#e7ecf7; opacity:0.9;">
+        <small>© <?php echo date('Y'); ?> Pie Menu Demo • <a href="index.php" style="color:#e7ecf7;">Landing</a> • <a href="logout.php" style="color:#e7ecf7;">Logout</a></small>
+    </footer>
 </body>
 </html>
