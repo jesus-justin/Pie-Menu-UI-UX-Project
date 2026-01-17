@@ -5,6 +5,7 @@ require_once __DIR__ . '/db.php';
 $errors = '';
 $username = trim($_POST['username'] ?? '');
 $registered = isset($_GET['registered']);
+$loggedOut = isset($_GET['logged_out']);
 $redirect = $_GET['redirect'] ?? $_POST['redirect'] ?? 'home.php';
 
 // Guard against open redirects by allowing only simple php targets in the same app
@@ -70,6 +71,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <?php if ($registered): ?>
                 <div class="alert success">Account created successfully. You can log in now.</div>
+            <?php endif; ?>
+
+            <?php if ($loggedOut): ?>
+                <div class="alert success">You have been logged out.</div>
             <?php endif; ?>
 
             <?php if ($errors): ?>
