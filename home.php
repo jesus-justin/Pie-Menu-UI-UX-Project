@@ -97,14 +97,14 @@ $menuItems = [
     </style>
 </head>
 <body>
-    <header class="top-nav">
-        <div class="brand"><span class="brand-dot"></span>Pie Menu</div>
-        <nav class="nav-links">
-            <a href="index.php">Landing</a>
-            <a class="pill-link" href="login.php">Login</a>
-            <a class="pill-link" href="register.php">Register</a>
-        </nav>
-    </header>
+        <header class="top-nav">
+            <div class="brand"><span class="brand-dot"></span>Pie Menu</div>
+            <nav class="nav-links">
+                <span class="pill-link">Hello, <?php echo htmlspecialchars($_SESSION['username'] ?? 'User', ENT_QUOTES, 'UTF-8'); ?></span>
+                <a href="index.php">Landing</a>
+                <a class="pill-link" href="logout.php">Logout</a>
+            </nav>
+        </header>
 
     <div class="landing-container">
         <section class="hero-section">
