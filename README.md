@@ -1,6 +1,6 @@
 # Pie Menu (Kando-inspired)
 
-A slim PHP-first recreation of Simon Schneegans' Kando pie menu. This version keeps the interaction model and bold visuals, but removes build tooling and stays fully data-driven from a single `index.php`.
+A slim PHP-first recreation of Simon Schneegans' Kando pie menu. This version keeps the interaction model and bold visuals, but removes build tooling and stays fully data-driven.
 
 ---
 
@@ -19,22 +19,33 @@ A slim PHP-first recreation of Simon Schneegans' Kando pie menu. This version ke
 - Zero build step: vanilla PHP + JS + CSS
 
 ## Quick start
-1) Requirements: PHP 8+ (or XAMPP) and a browser.
-2) From this folder run the built-in server:
+1) Requirements: PHP 8+ (or XAMPP), MySQL, and a browser.
+2) Create the database and table:
+	```sql
+	-- In MySQL
+	SOURCE pie_menu_unique.sql;
+	```
+3) Configure database credentials in `config.php` (DB_HOST/DB_NAME/DB_USER/DB_PASS).
+4) Start PHP locally:
 	```bash
 	php -S localhost:8080
 	```
-3) Open http://localhost:8080 to play with the menu.
-
-If you are using XAMPP on Windows, place this folder under `htdocs` (already present here) and browse to `http://localhost/Pie-Menu-UI-UX-Project`.
+5) Open http://localhost:8080.
+   - Visit `index.php` to Login/Register.
+   - After login you’re redirected to `home.php` with the pie menu.
 
 ## Project structure
-- index.php — entry point that defines menu data and markup
-- assets/css/style.css — visual system, layout, and connector styling
-- assets/js/menu.js — radial placement, toggle/keyboard logic, center status panel
+- index.php — landing page (Login/Register)
+- home.php — pie menu demo (requires login)
+- login.php — credential validation with sessions
+- register.php — account creation with hashed passwords
+- logout.php — ends session and redirects to login
+- pie_menu_unique.sql — database schema
+- assets/css/style.css — layout and components
+- assets/js/menu.js — radial placement, toggle/keyboard logic
 
 ## Customizing
-- Edit the `$menuItems` array in `index.php` to change labels, colors, links, and descriptions.
+- Edit the `$menuItems` array in `home.php` to change labels, colors, links, and descriptions.
 - Tweak `--ring-radius` and `--item-size` in `assets/css/style.css` to resize the ring.
 - Replace the Google Font in the `<head>` of `index.php` if you prefer a different display face.
 - The center status panel mirrors the hovered/focused item; adjust its copy or styles as needed.
