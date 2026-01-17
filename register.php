@@ -12,11 +12,14 @@ function e(string $value): string {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     $confirm = $_POST['confirm_password'] ?? '';
+    $username = trim($username);
+    $password = trim($password);
+    $confirm = trim($confirm);
 
     if ($username === '' || $password === '' || $confirm === '') {
         $errors = 'All fields are required.';
-    } elseif (strlen($username) < 3) {
-        $errors = 'Username must be at least 3 characters long.';
+    } elseif (!preg_match('/^[A-Za-z0-9_]{3,32}$/', $username)) {
+        $errors = 'Username must be 3-32 characters: letters, numbers, underscore.';
     } elseif (strlen($password) < 8) {
         $errors = 'Password must be at least 8 characters long.';
     } elseif ($password !== $confirm) {

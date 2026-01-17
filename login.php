@@ -19,12 +19,19 @@ function e(string $value): string {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
+    $username = trim($username);
+    $password = trim($password);
+
     if ($username === '' || $password === '') {
         $errors = 'Please provide both username and password.';
+    } elseif (!preg_match('/^[A-Za-z0-9_]{3,32}$/', $username)) {
+        $errors = 'Invalid username format. Use 3-32 letters, numbers, or underscore.';
     } else {
         $db = getDb();
         $user = getUserByUsername($db, $username);
         if ($user && password_verify($password, $user['password_hash'])) {
+            // Prevent session fixation
+            session_regenerate_id(true);
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
             header('Location: ' . $redirect);
