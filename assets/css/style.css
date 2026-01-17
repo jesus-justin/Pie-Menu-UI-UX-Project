@@ -949,3 +949,8 @@ main.page {
   text-decoration-color: var(--accent);
   outline: none;
 }
+
+/* Footer */
+.site-footer a {
+  text-decoration: none;
+}
