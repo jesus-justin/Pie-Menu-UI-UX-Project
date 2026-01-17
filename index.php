@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Welcome to our innovative platform with intuitive navigation" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>Welcome - Innovative Navigation Experience</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1045,17 +1046,21 @@
         }
     </style>
 </head>
-<body>
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress"></div>
+    <footer class="site-footer" style="margin-top:40px; padding:20px; text-align:center; color:#e7ecf7; opacity:0.9;">
+        <small>© <?php echo date('Y'); ?> Pie Menu Demo • <a href="home.php" style="color:#e7ecf7;">Home</a> • <a href="login.php" style="color:#e7ecf7;">Login</a> • <a href="register.php" style="color:#e7ecf7;">Register</a></small>
+    </footer>
     
-    <!-- Page Loader -->
-    <div class="page-loader">
-        <div class="loader-spinner"></div>
-    </div>
-    
-    <!-- Animated background particles -->
-    <div class="particle"></div>
+    <footer class="footer">
+        <p>&copy; 2026 Pie Menu UI/UX Project. Crafted with innovation and care.</p>
+        <div class="footer-links">
+            <a href="home.php">Home</a>
+            <a href="login.php">Login</a>
+            <a href="register.php">Register</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.85rem;">Designed for elegant navigation experiences</p>
+    </footer>
     <div class="particle"></div>
     <div class="particle"></div>
     <div class="particle"></div>
