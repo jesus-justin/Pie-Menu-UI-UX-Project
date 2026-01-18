@@ -20,6 +20,11 @@ define('DB_NAME', 'pie_menu_unique');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 
+// Session security settings
+ini_set('session.cookie_httponly', 1);
+ini_set('session.use_strict_mode', 1);
+ini_set('session.cookie_samesite', 'Strict');
+
 // Feature toggles
 define('SHOW_HERO_SECTION', true);
 define('SHOW_FEATURES_SECTION', true);
