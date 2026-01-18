@@ -18,6 +18,9 @@ function e(string $value): string {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // TODO: Implement rate limiting to prevent brute force attacks
+    // Consider: IP-based throttling, account lockout after N failed attempts
+    
     $password = $_POST['password'] ?? '';
 
     $username = trim($username);
