@@ -80,16 +80,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form method="post" class="form-grid" novalidate>
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input class="form-control" type="text" id="username" name="username" value="<?php echo e($username); ?>" autocomplete="username" required />
+                    <input class="form-control" type="text" id="username" name="username" value="<?php echo e($username); ?>" autocomplete="username" pattern="[A-Za-z0-9_]{3,32}" minlength="3" maxlength="32" required />
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input class="form-control" type="password" id="password" name="password" autocomplete="new-password" required />
+                    <input class="form-control" type="password" id="password" name="password" autocomplete="new-password" minlength="8" required />
                     <span class="helper">At least 8 characters recommended.</span>
                 </div>
                 <div class="form-group">
                     <label for="confirm_password">Confirm Password</label>
-                    <input class="form-control" type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" required />
+                    <input class="form-control" type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" minlength="8" required />
                 </div>
                 <button class="btn btn-primary" type="submit">Create Account</button>
                 <p class="helper">Already registered? <a class="muted-link" href="login.php">Log in</a>.</p>
