@@ -20,6 +20,8 @@ function getDb(): PDO {
     try {
         $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
     } catch (PDOException $e) {
+        // Log the error for debugging (in production, log to file)
+        error_log('Database connection failed: ' . $e->getMessage());
         exit('Database connection failed. Please check config.php settings.');
     }
 
