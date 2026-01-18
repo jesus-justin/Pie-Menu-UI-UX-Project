@@ -45,3 +45,17 @@ function getContrastColor($hexColor) {
 function isCliMode() {
     return php_sapi_name() === 'cli';
 }
+
+/**
+ * Enhanced input trimming and normalization
+ */
+function cleanInput(string $input): string {
+    return trim(preg_replace('/\s+/', ' ', $input));
+}
+
+/**
+ * Validate username format
+ */
+function isValidUsername(string $username): bool {
+    return (bool) preg_match('/^[A-Za-z0-9_]{3,32}$/', $username);
+}
