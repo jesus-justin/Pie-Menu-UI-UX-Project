@@ -907,11 +907,21 @@ main.page {
   background: rgba(7, 10, 20, 0.7);
   color: var(--text);
   font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-control:focus {
   outline: 2px solid var(--accent);
   border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(111, 255, 210, 0.1);
+}
+
+.form-control:invalid:not(:placeholder-shown) {
+  border-color: rgba(255, 99, 132, 0.6);
+}
+
+.form-control:valid:not(:placeholder-shown) {
+  border-color: rgba(111, 255, 210, 0.4);
 }
 
 .helper {
