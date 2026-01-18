@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main class="auth-wrapper">
         <section class="auth-card">
             <div class="badge">Secure Access</div>
-            <h1>Log In</h1>
+            <h1 id="login-heading">Log In</h1>
             <p>Enter your credentials to access the home page and pie menu demo.</p>
 
             <?php if ($registered): ?>
@@ -86,10 +86,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="alert error"><?php echo e($errors); ?></div>
             <?php endif; ?>
 
-            <form method="post" class="form-grid" novalidate>
+            <form method="post" class="form-grid" novalidate aria-labelledby="login-heading">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input class="form-control" type="text" id="username" name="username" value="<?php echo e($username); ?>" autocomplete="username" pattern="[A-Za-z0-9_]{3,32}" minlength="3" maxlength="32" required />
+                    <input class="form-control" type="text" id="username" name="username" value="<?php echo e($username); ?>" autocomplete="username" pattern="[A-Za-z0-9_]{3,32}" minlength="3" maxlength="32" aria-describedby="username-hint" required />
+                    <span id="username-hint" class="helper" style="display:none;">3-32 characters: letters, numbers, underscore</span>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
