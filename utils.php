@@ -59,3 +59,22 @@ function cleanInput(string $input): string {
 function isValidUsername(string $username): bool {
     return (bool) preg_match('/^[A-Za-z0-9_]{3,32}$/', $username);
 }
+
+/**
+ * Get total user count from database
+ */
+function getUserCount(PDO $db): int {
+    $stmt = $db->query('SELECT COUNT(*) FROM users');
+    return (int) $stmt->fetchColumn();
+}
+
+/**
+ * Format timestamp for display
+ */
+function formatTimestamp(?string $timestamp): string {
+    if (!$timestamp) {
+        return 'Never';
+    }
+    $date = new DateTime($timestamp);
+    return $date->format('M j, Y g:i A');
+}
