@@ -103,6 +103,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Show password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8ca0c2;cursor:pointer;padding:4px 8px;">👁️</button>
                     </div>
                 </div>
+                <div class="form-group" style="display:flex;align-items:center;gap:8px;">
+                    <input type="checkbox" id="remember" name="remember" style="width:auto;margin:0;" />
+                    <label for="remember" style="margin:0;font-weight:normal;cursor:pointer;">Remember me for 30 days</label>
+                </div>
                 <input type="hidden" name="redirect" value="<?php echo e($redirect); ?>" />
                 <button class="btn btn-primary" type="submit">Log In</button>
                 <p class="helper">No account yet? <a class="muted-link" href="register.php">Create one</a>.</p>
