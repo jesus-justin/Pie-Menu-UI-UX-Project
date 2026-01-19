@@ -1,0 +1,13 @@
+# Robots.txt for Pie Menu Project
+# Control search engine crawling
+
+User-agent: *
+Allow: /
+Disallow: /logout.php
+Disallow: /db.php
+Disallow: /config.php
+Disallow: /utils.php
+Disallow: /pie_menu_unique.sql
+
+# Sitemap (update with actual location when available)
+# Sitemap: https://yourdomain.com/sitemap.xml
