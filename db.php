@@ -56,3 +56,12 @@ function updateLastLogin(PDO $db, int $userId): bool {
     $stmt = $db->prepare('UPDATE users SET last_login = CURRENT_TIMESTAMP WHERE id = :id');
     return $stmt->execute([':id' => $userId]);
 }
+
+/**
+ * Check if user has admin role (placeholder for future role system).
+ */
+function isUserAdmin(PDO $db, int $userId): bool {
+    // TODO: Implement role-based access control
+    // For now, check if user ID is 1 (first user = admin)
+    return $userId === 1;
+}
