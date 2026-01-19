@@ -108,5 +108,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <footer class="site-footer" style="margin-top:40px; padding:20px; text-align:center; color:#e7ecf7; opacity:0.9;">
         <small>© <?php echo date('Y'); ?> Pie Menu Demo • <a href="index.php" style="color:#e7ecf7;">Landing</a> • <a href="register.php" style="color:#e7ecf7;">Register</a></small>
     </footer>
+    <script src="assets/js/auth.js"></script>
 </body>
 </html>
