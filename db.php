@@ -48,3 +48,11 @@ function createUser(PDO $db, string $username, string $passwordHash): bool {
         ':password_hash' => $passwordHash,
     ]);
 }
+
+/**
+ * Update last login timestamp for user.
+ */
+function updateLastLogin(PDO $db, int $userId): bool {
+    $stmt = $db->prepare('UPDATE users SET last_login = CURRENT_TIMESTAMP WHERE id = :id');
+    return $stmt->execute([':id' => $userId]);
+}
