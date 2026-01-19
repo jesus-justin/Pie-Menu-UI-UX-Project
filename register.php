@@ -98,6 +98,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')" aria-label="Show password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8ca0c2;cursor:pointer;padding:4px 8px;">👁️</button>
                     </div>
                 </div>
+                <div class="form-group" style="display:flex;align-items:center;gap:8px;">
+                    <input type="checkbox" id="terms" name="terms" required style="width:auto;margin:0;" />
+                    <label for="terms" style="margin:0;font-weight:normal;cursor:pointer;">I agree to the Terms of Service and Privacy Policy</label>
+                </div>
                 <button class="btn btn-primary" type="submit">Create Account</button>
                 <p class="helper">Already registered? <a class="muted-link" href="login.php">Log in</a>.</p>
             </form>
