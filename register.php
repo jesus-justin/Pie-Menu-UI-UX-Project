@@ -85,12 +85,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input class="form-control" type="password" id="password" name="password" autocomplete="new-password" minlength="8" required />
+                    <div style="position:relative;">
+                        <input class="form-control" type="password" id="password" name="password" autocomplete="new-password" minlength="8" required />
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Show password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8ca0c2;cursor:pointer;padding:4px 8px;">👁️</button>
+                    </div>
                     <span class="helper">At least 8 characters recommended.</span>
                 </div>
                 <div class="form-group">
                     <label for="confirm_password">Confirm Password</label>
-                    <input class="form-control" type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" minlength="8" required />
+                    <div style="position:relative;">
+                        <input class="form-control" type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" minlength="8" required />
+                        <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')" aria-label="Show password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8ca0c2;cursor:pointer;padding:4px 8px;">👁️</button>
+                    </div>
                 </div>
                 <button class="btn btn-primary" type="submit">Create Account</button>
                 <p class="helper">Already registered? <a class="muted-link" href="login.php">Log in</a>.</p>
