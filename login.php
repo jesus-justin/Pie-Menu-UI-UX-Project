@@ -94,7 +94,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input class="form-control" type="password" id="password" name="password" autocomplete="current-password" minlength="8" required />
+                    <div style="position:relative;">
+                        <input class="form-control" type="password" id="password" name="password" autocomplete="current-password" minlength="8" required />
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Show password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8ca0c2;cursor:pointer;padding:4px 8px;">👁️</button>
+                    </div>
                 </div>
                 <input type="hidden" name="redirect" value="<?php echo e($redirect); ?>" />
                 <button class="btn btn-primary" type="submit">Log In</button>
