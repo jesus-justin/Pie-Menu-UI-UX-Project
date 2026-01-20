@@ -39,6 +39,16 @@ function getUserByUsername(PDO $db, string $username): ?array {
 }
 
 /**
+ * Fetch user row by id.
+ */
+function getUserById(PDO $db, int $id): ?array {
+    $stmt = $db->prepare('SELECT id, username, last_login, created_at FROM users WHERE id = :id LIMIT 1');
+    $stmt->execute([':id' => $id]);
+    $user = $stmt->fetch();
+    return $user ?: null;
+}
+
+/**
  * Insert a new user record.
  */
 function createUser(PDO $db, string $username, string $passwordHash): bool {
