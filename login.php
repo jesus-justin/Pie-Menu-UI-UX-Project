@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
 
             <?php if ($errors): ?>
-                <div class="alert error"><?php echo e($errors); ?></div>
+                <div class="alert error" role="alert" tabindex="-1"><?php echo e($errors); ?></div>
             <?php endif; ?>
 
             <form method="post" class="form-grid" novalidate aria-labelledby="login-heading">

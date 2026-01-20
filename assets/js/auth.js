@@ -96,18 +96,36 @@ function bindUsernameHint(fieldId, hintId) {
   const hint = document.getElementById(hintId);
   if (!field || !hint) return;
 
-  const show = () => {
-    hint.style.display = 'block';
-  };
+  const pattern = /^[A-Za-z0-9_]{3,32}$/;
 
-  const hide = () => {
+  const update = () => {
     if (!field.value) {
+      field.setCustomValidity('');
+      hint.textContent = '3-32 characters: letters, numbers, underscore';
+      hint.classList.remove('error', 'success');
       hint.style.display = 'none';
+      return;
+    }
+
+    hint.style.display = 'block';
+
+    if (pattern.test(field.value)) {
+      field.setCustomValidity('');
+      hint.textContent = 'Looks good.';
+      hint.classList.remove('error');
+      hint.classList.add('success');
+    } else {
+      field.setCustomValidity('Use 3-32 letters, numbers, underscore.');
+      hint.textContent = 'Use 3-32 letters, numbers, underscore.';
+      hint.classList.remove('success');
+      hint.classList.add('error');
     }
   };
 
-  field.addEventListener('focus', show);
-  field.addEventListener('blur', hide);
+  field.addEventListener('input', update);
+  field.addEventListener('focus', update);
+  field.addEventListener('blur', update);
+  update();
 }
 
 function bindLoadingState(formSelector) {
