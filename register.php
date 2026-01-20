@@ -29,6 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors = 'Password must be at least 8 characters long.';
     } elseif ($password !== $confirm) {
         $errors = 'Passwords do not match.';
+    } elseif (empty($_POST['terms'])) {
+        $errors = 'You must agree to the Terms of Service and Privacy Policy.';
     } else {
         $db = getDb();
         if (getUserByUsername($db, $username)) {
