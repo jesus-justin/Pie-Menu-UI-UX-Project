@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/utils.php';
 
 $errors = '';
 $username = trim($_POST['username'] ?? '');
@@ -12,11 +13,15 @@ function e(string $value): string {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     $confirm = $_POST['confirm_password'] ?? '';
+    $csrf = $_POST['csrf_token'] ?? null;
+
     $username = trim($username);
     $password = trim($password);
     $confirm = trim($confirm);
 
-    if ($username === '' || $password === '' || $confirm === '') {
+    if (!isValidCsrf($csrf)) {
+        $errors = 'Security check failed. Please refresh and try again.';
+    } elseif ($username === '' || $password === '' || $confirm === '') {
         $errors = 'All fields are required.';
     } elseif (!preg_match('/^[A-Za-z0-9_]{3,32}$/', $username)) {
         $errors = 'Username must be 3-32 characters: letters, numbers, underscore.';
@@ -102,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="checkbox" id="terms" name="terms" required style="width:auto;margin:0;" />
                     <label for="terms" style="margin:0;font-weight:normal;cursor:pointer;">I agree to the Terms of Service and Privacy Policy</label>
                 </div>
+                <input type="hidden" name="csrf_token" value="<?php echo e(ensureCsrfToken()); ?>" />
                 <button class="btn btn-primary" type="submit">Create Account</button>
                 <p class="helper">Already registered? <a class="muted-link" href="login.php">Log in</a>.</p>
             </form>
