@@ -58,6 +58,8 @@ $menuItems = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Pie menu home page" />
+    <meta name="theme-color" content="#667eea" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>Home - Pie Menu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
