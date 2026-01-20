@@ -679,6 +679,25 @@ main.page {
   .menu-tooltip {
     max-width: 300px;
   }
+
+  .auth-card {
+    padding: 20px;
+  }
+
+  .form-control,
+  .btn {
+    font-size: 16px;
+  }
+
+  .top-nav {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 }
 
 /* ============================
