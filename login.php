@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/utils.php';
 
 $errors = '';
 $username = trim($_POST['username'] ?? '');
@@ -22,15 +23,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Consider: IP-based throttling, account lockout after N failed attempts
     
     $password = $_POST['password'] ?? '';
+    $csrf = $_POST['csrf_token'] ?? null;
+
+    if (!isValidCsrf($csrf)) {
+        $errors = 'Security check failed. Please refresh and try again.';
+    }
 
     $username = trim($username);
     $password = trim($password);
 
-    if ($username === '' || $password === '') {
+    if (!$errors && ($username === '' || $password === '')) {
         $errors = 'Please provide both username and password.';
-    } elseif (!preg_match('/^[A-Za-z0-9_]{3,32}$/', $username)) {
+    } elseif (!$errors && !preg_match('/^[A-Za-z0-9_]{3,32}$/', $username)) {
         $errors = 'Invalid username format. Use 3-32 letters, numbers, or underscore.';
-    } else {
+    } elseif (!$errors) {
         $db = getDb();
         $user = getUserByUsername($db, $username);
         if ($user && password_verify($password, $user['password_hash'])) {
@@ -108,6 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="remember" style="margin:0;font-weight:normal;cursor:pointer;">Remember me for 30 days</label>
                 </div>
                 <input type="hidden" name="redirect" value="<?php echo e($redirect); ?>" />
+                <input type="hidden" name="csrf_token" value="<?php echo e(ensureCsrfToken()); ?>" />
                 <button class="btn btn-primary" type="submit">Log In</button>
                 <p class="helper">No account yet? <a class="muted-link" href="register.php">Create one</a>.</p>
             </form>
