@@ -15,10 +15,16 @@ define('SECONDARY_COLOR', '#764ba2');
 define('ACCENT_COLOR', '#6fffd2');
 
 // Database connection
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'pie_menu_unique');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', $_ENV['DB_HOST'] ?? 'localhost');
+define('DB_NAME', $_ENV['DB_NAME'] ?? 'pie_menu_unique');
+define('DB_USER', $_ENV['DB_USER'] ?? 'root');
+define('DB_PASS', $_ENV['DB_PASS'] ?? '');
+define('DB_CHARSET', 'utf8mb4');
+
+// Security constants
+define('BCRYPT_COST', 12);
+define('MAX_LOGIN_ATTEMPTS', 5);
+define('LOGIN_ATTEMPT_WINDOW', 300);
 
 // Session security settings
 ini_set('session.cookie_httponly', 1);
