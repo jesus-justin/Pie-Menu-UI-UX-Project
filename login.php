@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Consider: IP-based throttling, account lockout after N failed attempts
     
     $password = $_POST['password'] ?? '';
+    $remember = !empty($_POST['remember']);
     $csrf = $_POST['csrf_token'] ?? null;
 
     if (!isValidCsrf($csrf)) {
@@ -47,6 +48,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             // Track last login
             updateLastLogin($db, $user['id']);
+
+            // Extend session lifetime when remember me is checked
+            if ($remember) {
+                $params = session_get_cookie_params();
+                setcookie(session_name(), session_id(), [
+                    'expires' => time() + 60 * 60 * 24 * 30,
+                    'path' => $params['path'],
+                    'domain' => $params['domain'],
+                    'secure' => $params['secure'],
+                    'httponly' => $params['httponly'],
+                    'samesite' => $params['samesite'] ?? 'Strict',
+                ]);
+            }
             
             header('Location: ' . $redirect);
             exit;
