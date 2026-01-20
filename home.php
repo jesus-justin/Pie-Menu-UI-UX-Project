@@ -1,10 +1,17 @@
 <?php
 session_start();
+require_once __DIR__ . '/db.php';
+require_once __DIR__ . '/utils.php';
 
 if (empty($_SESSION['user_id'])) {
     header('Location: login.php?redirect=home.php');
     exit;
 }
+
+$db = getDb();
+$currentUser = getUserById($db, (int) $_SESSION['user_id']);
+$lastLoginText = formatTimestamp($currentUser['last_login'] ?? null);
+$isAdmin = isUserAdmin($db, (int) $_SESSION['user_id']);
 
 $menuItems = [
     [
@@ -101,7 +108,7 @@ $menuItems = [
         <header class="top-nav">
             <div class="brand"><span class="brand-dot"></span>Pie Menu</div>
             <nav class="nav-links">
-                <span class="pill-link">Hello, <?php echo htmlspecialchars($_SESSION['username'] ?? 'User', ENT_QUOTES, 'UTF-8'); ?></span>
+                <span class="pill-link">Hello, <?php echo htmlspecialchars($_SESSION['username'] ?? 'User', ENT_QUOTES, 'UTF-8'); ?><?php echo $isAdmin ? ' • Admin' : ''; ?></span>
                 <a href="index.php">Landing</a>
                 <a class="pill-link" href="logout.php">Logout</a>
             </nav>
@@ -113,6 +120,7 @@ $menuItems = [
                 <div class="hero-text">
                     <h1>Home & Pie Menu Demo</h1>
                     <p>Explore the interactive radial navigation. Use the menu toggle to spin through the actions and see contextual details.</p>
+                    <p class="helper">Last login: <?php echo htmlspecialchars($lastLoginText, ENT_QUOTES, 'UTF-8'); ?></p>
                     <div class="cta-buttons">
                         <button class="btn btn-primary" type="button" onclick="document.getElementById('menuToggle').click()">Open Menu</button>
                         <a class="btn btn-secondary" href="index.php">Go to Landing</a>
