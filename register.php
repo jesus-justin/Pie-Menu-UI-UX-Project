@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>Set up your credentials to access the menu experience.</p>
 
             <?php if ($errors): ?>
-                <div class="alert error"><?php echo e($errors); ?></div>
+                <div class="alert error" role="alert" tabindex="-1"><?php echo e($errors); ?></div>
             <?php endif; ?>
 
             <form method="post" class="form-grid" novalidate aria-labelledby="register-heading">
@@ -97,6 +97,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Show password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8ca0c2;cursor:pointer;padding:4px 8px;">👁️</button>
                     </div>
                     <span class="helper">At least 8 characters recommended.</span>
+                    <div class="strength-meter" aria-live="polite">
+                        <div class="strength-meter-bar" id="passwordStrengthBar"></div>
+                        <span class="strength-meter-label" id="passwordStrengthLabel" aria-live="polite">Strength: —</span>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="confirm_password">Confirm Password</label>
@@ -104,6 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input class="form-control" type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" minlength="8" required />
                         <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')" aria-label="Show password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8ca0c2;cursor:pointer;padding:4px 8px;">👁️</button>
                     </div>
+                    <span class="helper" id="confirmPasswordHint" aria-live="polite"></span>
                 </div>
                 <div class="form-group" style="display:flex;align-items:center;gap:8px;">
                     <input type="checkbox" id="terms" name="terms" required style="width:auto;margin:0;" />

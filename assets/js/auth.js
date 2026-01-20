@@ -3,8 +3,9 @@
  */
 function togglePassword(fieldId) {
   const field = document.getElementById(fieldId);
-  const button = field.nextElementSibling;
-  
+  const button = field?.nextElementSibling;
+  if (!field || !button) return;
+
   if (field.type === 'password') {
     field.type = 'text';
     button.textContent = '🙈';
@@ -15,3 +16,116 @@ function togglePassword(fieldId) {
     button.setAttribute('aria-label', 'Show password');
   }
 }
+
+function evaluateStrength(password) {
+  let score = 0;
+  if (password.length >= 8) score += 1;
+  if (password.length >= 12) score += 1;
+  if (/[A-Z]/.test(password)) score += 1;
+  if (/[0-9]/.test(password)) score += 1;
+  if (/[^A-Za-z0-9]/.test(password)) score += 1;
+
+  const labels = ['Very weak', 'Weak', 'Fair', 'Good', 'Strong', 'Excellent'];
+  const clamped = Math.min(score, labels.length - 1);
+  return { score: clamped, label: labels[clamped] };
+}
+
+function bindStrengthMeter(fieldId, barId, labelId) {
+  const field = document.getElementById(fieldId);
+  const bar = document.getElementById(barId);
+  const label = document.getElementById(labelId);
+  if (!field || !bar || !label) return;
+
+  const update = () => {
+    const { score, label: text } = evaluateStrength(field.value);
+    const width = (score / 5) * 100;
+    const gradient = 'linear-gradient(90deg, #ff6384, #ff9f40, #6fffd2)';
+    bar.style.setProperty('--strength-fill', `${width}%`);
+    bar.style.setProperty('--strength-color', gradient);
+    bar.dataset.score = String(score);
+    label.textContent = `Strength: ${text}`;
+  };
+
+  field.addEventListener('input', update);
+  update();
+}
+
+function bindPasswordConfirmation(passwordId, confirmId, hintId) {
+  const password = document.getElementById(passwordId);
+  const confirm = document.getElementById(confirmId);
+  const hint = document.getElementById(hintId);
+  if (!password || !confirm || !hint) return;
+
+  const sync = () => {
+    const hasValue = confirm.value.length > 0;
+    const matches = confirm.value === password.value;
+
+    if (!hasValue) {
+      confirm.setCustomValidity('');
+      hint.textContent = '';
+      hint.classList.remove('error', 'success');
+      return;
+    }
+
+    if (matches) {
+      confirm.setCustomValidity('');
+      hint.textContent = 'Passwords match';
+      hint.classList.remove('error');
+      hint.classList.add('success');
+    } else {
+      confirm.setCustomValidity('Passwords must match');
+      hint.textContent = 'Passwords do not match yet';
+      hint.classList.remove('success');
+      hint.classList.add('error');
+    }
+  };
+
+  password.addEventListener('input', sync);
+  confirm.addEventListener('input', sync);
+}
+
+function focusFirstErrorAlert() {
+  const alert = document.querySelector('.alert.error');
+  if (alert) {
+    alert.focus({ preventScroll: false });
+  }
+}
+
+function bindUsernameHint(fieldId, hintId) {
+  const field = document.getElementById(fieldId);
+  const hint = document.getElementById(hintId);
+  if (!field || !hint) return;
+
+  const show = () => {
+    hint.style.display = 'block';
+  };
+
+  const hide = () => {
+    if (!field.value) {
+      hint.style.display = 'none';
+    }
+  };
+
+  field.addEventListener('focus', show);
+  field.addEventListener('blur', hide);
+}
+
+function bindLoadingState(formSelector) {
+  const form = document.querySelector(formSelector);
+  if (!form) return;
+  form.addEventListener('submit', () => {
+    const submit = form.querySelector('button[type="submit"]');
+    if (submit) {
+      submit.setAttribute('aria-busy', 'true');
+      submit.disabled = true;
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  bindStrengthMeter('password', 'passwordStrengthBar', 'passwordStrengthLabel');
+  bindPasswordConfirmation('password', 'confirm_password', 'confirmPasswordHint');
+  bindUsernameHint('username', 'username-hint');
+  focusFirstErrorAlert();
+  bindLoadingState('form');
+});
