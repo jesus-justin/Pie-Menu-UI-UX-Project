@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="password">Password</label>
                     <div style="position:relative;">
                         <input class="form-control" type="password" id="password" name="password" autocomplete="current-password" minlength="8" required />
-                        <button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Show password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8ca0c2;cursor:pointer;padding:4px 8px;">👁️</button>
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Show password">👁️</button>
                     </div>
                 </div>
                 <div class="form-group" style="display:flex;align-items:center;gap:8px;">

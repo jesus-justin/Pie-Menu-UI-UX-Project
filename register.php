@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="password">Password</label>
                     <div style="position:relative;">
                         <input class="form-control" type="password" id="password" name="password" autocomplete="new-password" minlength="8" required />
-                        <button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Show password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8ca0c2;cursor:pointer;padding:4px 8px;">👁️</button>
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Show password">👁️</button>
                     </div>
                     <span class="helper">At least 8 characters recommended.</span>
                     <div class="strength-meter" aria-live="polite">
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="confirm_password">Confirm Password</label>
                     <div style="position:relative;">
                         <input class="form-control" type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" minlength="8" required />
-                        <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')" aria-label="Show password" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;color:#8ca0c2;cursor:pointer;padding:4px 8px;">👁️</button>
+                        <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')" aria-label="Show password">👁️</button>
                     </div>
                     <span class="helper" id="confirmPasswordHint" aria-live="polite"></span>
                 </div>
