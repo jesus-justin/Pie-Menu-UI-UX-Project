@@ -98,3 +98,37 @@ function isValidCsrf(?string $token): bool {
     }
     return is_string($token) && hash_equals($_SESSION['csrf_token'] ?? '', $token);
 }
+
+/**
+ * Validate email format
+ */
+function isValidEmail(string $email): bool {
+    return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
+}
+
+/**
+ * Generate a secure random token
+ */
+function generateSecureToken(int $length = 32): string {
+    return bin2hex(random_bytes($length));
+}
+
+/**
+ * Rate limiting helper - check if action is allowed
+ */
+function isRateLimited(string $key, int $maxAttempts = 5, int $windowSeconds = 300): bool {
+    if (!isset($_SESSION['rate_limit'])) {
+        $_SESSION['rate_limit'] = [];
+    }
+
+    $now = time();
+    $attempts = &$_SESSION['rate_limit'][$key];
+
+    if (!isset($attempts) || ($now - $attempts['first']) > $windowSeconds) {
+        $attempts = ['first' => $now, 'count' => 1];
+        return false;
+    }
+
+    $attempts['count']++;
+    return $attempts['count'] > $maxAttempts;
+}
