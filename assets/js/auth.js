@@ -146,4 +146,20 @@ document.addEventListener('DOMContentLoaded', () => {
   bindUsernameHint('username', 'username-hint');
   focusFirstErrorAlert();
   bindLoadingState('form');
+  preventDoubleSubmit();
 });
+
+function preventDoubleSubmit() {
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    let submitted = false;
+    form.addEventListener('submit', (e) => {
+      if (submitted) {
+        e.preventDefault();
+        return false;
+      }
+      submitted = true;
+      setTimeout(() => { submitted = false; }, 3000);
+    });
+  });
+}
