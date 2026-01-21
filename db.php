@@ -1,4 +1,9 @@
 <?php
+/**
+ * Database layer - Connection and user management functions
+ * All database operations use prepared statements for security
+ */
+
 require_once __DIR__ . '/config.php';
 
 /**
