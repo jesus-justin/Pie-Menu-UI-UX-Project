@@ -85,6 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="top-nav">
         <div class="brand"><span class="brand-dot"></span>Pie Menu</div>
         <nav class="nav-links">

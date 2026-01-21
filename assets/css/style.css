@@ -1096,3 +1096,23 @@ main.page {
 .site-footer a {
   text-decoration: none;
 }
+
+/* Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent);
+  color: var(--bg-1);
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  z-index: 100;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
