@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </nav>
     </header>
 
-    <main class="auth-wrapper">
+    <main class="auth-wrapper" id="main-content">
         <section class="auth-card">
             <div class="badge">Secure Access</div>
             <h1 id="login-heading">Log In</h1>
