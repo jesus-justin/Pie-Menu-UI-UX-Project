@@ -793,6 +793,11 @@ main.page {
   transform: scale(0.96);
 }
 
+.btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .btn-primary {
   background: white;
   color: #667eea;
