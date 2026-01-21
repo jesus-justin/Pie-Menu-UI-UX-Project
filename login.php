@@ -116,13 +116,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form method="post" class="form-grid" novalidate aria-labelledby="login-heading">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input class="form-control" type="text" id="username" name="username" value="<?php echo e($username); ?>" autocomplete="username" pattern="[A-Za-z0-9_]{3,32}" minlength="3" maxlength="32" aria-describedby="username-hint" required />
+                    <input class="form-control" type="text" id="username" name="username" value="<?php echo e($username); ?>" autocomplete="username" pattern="[A-Za-z0-9_]{3,32}" minlength="3" maxlength="32" aria-describedby="username-hint" aria-required="true" required />
                     <span id="username-hint" class="helper" style="display:none;">3-32 characters: letters, numbers, underscore</span>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
                     <div style="position:relative;">
-                        <input class="form-control" type="password" id="password" name="password" autocomplete="current-password" minlength="8" required />
+                        <input class="form-control" type="password" id="password" name="password" autocomplete="current-password" minlength="8" aria-required="true" required />
                         <button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Show password">👁️</button>
                     </div>
                 </div>
