@@ -6,7 +6,7 @@
 
 // Application settings
 define('APP_NAME', 'Pie Menu Navigation');
-define('APP_VERSION', '1.0.0');
+define('APP_VERSION', '1.1.0');
 define('APP_DESCRIPTION', 'Interactive pie menu with modern landing page');
 
 // Color scheme
