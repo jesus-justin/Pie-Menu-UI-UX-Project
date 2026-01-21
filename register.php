@@ -11,7 +11,11 @@ function e(string $value): string {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $password = $_POST['password'] ?? '';
+    // Rate limiting for registration
+    if (isRateLimited('register_attempt', 3, 300)) {
+        $errors = 'Too many registration attempts. Please try again later.';
+    } else {
+        $password = $_POST['password'] ?? '';
     $confirm = $_POST['confirm_password'] ?? '';
     $csrf = $_POST['csrf_token'] ?? null;
 
@@ -43,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             $errors = 'Something went wrong while creating your account. Please try again.';
         }
+    }
     }
 }
 ?>
