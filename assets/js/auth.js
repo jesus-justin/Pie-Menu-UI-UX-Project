@@ -1,4 +1,12 @@
 /**
+ * Authentication form enhancements
+ * Handles password visibility, strength checking, validation, and UX improvements
+ */
+
+(function() {
+  'use strict';
+
+/**
  * Toggle password visibility
  */
 function togglePassword(fieldId) {
@@ -163,3 +171,5 @@ function preventDoubleSubmit() {
     });
   });
 }
+
+})();
