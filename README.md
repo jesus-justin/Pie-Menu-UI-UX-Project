@@ -1,24 +1,46 @@
 # Pie Menu (Kando-inspired)
 
-A slim PHP-first recreation of Simon Schneegans' Kando pie menu. This version keeps the interaction model and bold visuals, but removes build tooling and stays fully data-driven.
+A slim PHP-first recreation of Simon Schneegans' Kando pie menu with modern authentication and security features.
 
 ---
 
-## Features
-- 🎨 Modern landing page with hero section
-- 🎯 Interactive radial pie menu with smooth animations
-- 📱 Fully responsive design (mobile, tablet, desktop)
-- ⌨️ Keyboard support: arrows to cycle, Enter/Space to activate, Escape to close
-- 🎪 Zero build step: vanilla PHP + JS + CSS
-- ♿ Accessibility-first design with focus states
+## ✨ Features
 
-## What you get
-- Radial action menu rendered from a PHP array
-- Hover/focus tooltip, per-item colors, and smooth reveal
-- Keyboard support: arrows to cycle, Enter/Space to activate, Escape to close
+### 🎨 Interactive UI
+- Modern landing page with hero section
+- Interactive radial pie menu with smooth animations
+- Fully responsive design (mobile, tablet, desktop)
+- Beautiful gradient backgrounds with orbital particle effects
 - Zero build step: vanilla PHP + JS + CSS
 
-## Quick start
+### 🔐 Security & Authentication
+- User registration and login system
+- CSRF protection on all forms
+- Password strength validation
+- Secure session management with remember-me
+- Rate limiting helpers
+- Input sanitization and validation
+
+### ♿ Accessibility
+- Keyboard navigation (arrows to cycle, Enter/Space to activate, Escape to close)
+- ARIA labels and landmarks
+- Skip-to-content links
+- Screen reader friendly
+- High contrast focus indicators
+
+### 🚀 Performance
+- Font preloading
+- Optimized CSS animations
+- Efficient database queries
+- Static asset caching
+
+## 📋 Requirements
+
+- PHP 8+ (or XAMPP/WAMP)
+- MySQL 5.7+
+- Modern web browser
+
+## 🚀 Quick Start
 1) Requirements: PHP 8+ (or XAMPP), MySQL, and a browser.
 2) Create the database and table:
 	```sql
