@@ -2,6 +2,60 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2026-01-21
+
+### Added
+- Environment configuration template (.env.example)
+- Application constants file for centralized config
+- 404 error page
+- XML sitemap for SEO
+- Security policy documentation (SECURITY.md)
+- Contributing guidelines (CONTRIBUTING.md)
+- Skip-to-content accessibility links
+- ARIA attributes for better screen reader support
+- Theme-color meta tags for mobile browsers
+- Font preloading for performance
+- Rate limiting helpers in utils.php
+- Email validation function
+- Form double-submission prevention
+- Mobile responsive layout improvements
+- Strict mode in JavaScript files
+- Enhanced focus visibility for buttons
+
+### Changed
+- Improved README with comprehensive feature list
+- Enhanced password toggle button styling
+- Better error alert accessibility with role and tabindex
+- Live username validation feedback
+- Updated meta tags with security headers
+- Environment-based database configuration
+
+### Security
+- Added CSRF token validation to all forms
+- Implemented password strength meter
+- Added remember-me session persistence
+- Enforced terms acceptance on registration
+- Added security constants to config
+- HTTP security headers via .htaccess
+
+## [1.0.0] - 2026-01-15
+
+### Added
+- Initial release
+- Pie menu navigation system
+- User authentication (login/register)
+- Session management
+- Database schema
+- Responsive CSS design
+- Interactive JavaScript menu
+- Landing page
+- Home dashboard
+
+[1.1.0]: https://github.com/jesus-justin/Pie-Menu-UI-UX-Project/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/jesus-justin/Pie-Menu-UI-UX-Project/releases/tag/v1.0.0
+
+All notable changes to this project will be documented in this file.
+
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
