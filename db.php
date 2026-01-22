@@ -26,8 +26,12 @@ function getDb(): PDO {
         $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
     } catch (PDOException $e) {
         // Log the error for debugging (in production, log to file)
-        error_log('Database connection failed: ' . $e->getMessage());
-        exit('Database connection failed. Please check config.php settings.');
+        debugLog('Database connection failed', ['error' => $e->getMessage()]);
+        if (defined('DEBUG_MODE') && DEBUG_MODE) {
+            error_log('Database connection failed: ' . $e->getMessage());
+            exit('Database connection failed. Please check config.php settings.');
+        }
+        exit('Service temporarily unavailable. Please try again later.');
     }
 
     return $pdo;
