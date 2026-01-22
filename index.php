@@ -9,6 +9,7 @@
     <meta name="author" content="Jesus Justin" />
     <meta name="theme-color" content="#0a0f1f" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="index, follow" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>Welcome - Innovative Navigation Experience</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
