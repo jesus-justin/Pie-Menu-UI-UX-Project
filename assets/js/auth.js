@@ -14,15 +14,10 @@ function togglePassword(fieldId) {
   const button = field?.nextElementSibling;
   if (!field || !button) return;
 
-  if (field.type === 'password') {
-    field.type = 'text';
-    button.textContent = '🙈';
-    button.setAttribute('aria-label', 'Hide password');
-  } else {
-    field.type = 'password';
-    button.textContent = '👁️';
-    button.setAttribute('aria-label', 'Show password');
-  }
+  const isPassword = field.type === 'password';
+  field.type = isPassword ? 'text' : 'password';
+  button.textContent = isPassword ? '🙈' : '👁️';
+  button.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
 }
 
 function evaluateStrength(password) {
