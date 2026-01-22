@@ -69,6 +69,16 @@ function getUserCount(PDO $db): int {
 }
 
 /**
+ * Sanitize output for HTML display
+ * 
+ * @param string $text Text to sanitize
+ * @return string HTML-safe text
+ */
+function sanitizeOutput(string $text): string {
+    return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+}
+
+/**
  * Format timestamp for display
  */
 function formatTimestamp(?string $timestamp): string {
