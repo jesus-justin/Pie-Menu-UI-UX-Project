@@ -172,6 +172,12 @@
 
     if (chipToggle) {
       chipToggle.addEventListener("click", clickToggle);
+      chipToggle.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          clickToggle();
+        }
+      });
     }
 
     ring.addEventListener("keydown", handleKey);
