@@ -120,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="form-group" style="display:flex;align-items:center;gap:8px;">
                     <input type="checkbox" id="terms" name="terms" required style="width:auto;margin:0;" />
+                <div class="form-group">
                     <label for="terms" style="margin:0;font-weight:normal;cursor:pointer;">I agree to the Terms of Service and Privacy Policy</label>
                 </div>
                 <input type="hidden" name="csrf_token" value="<?php echo e(ensureCsrfToken()); ?>" />

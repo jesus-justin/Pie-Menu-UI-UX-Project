@@ -133,6 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <div class="form-group" style="display:flex;align-items:center;gap:8px;">
                     <input type="checkbox" id="remember" name="remember" style="width:auto;margin:0;" />
+                <div class="form-group">
                     <label for="remember" style="margin:0;font-weight:normal;cursor:pointer;">Remember me for 30 days</label>
                 </div>
                 <input type="hidden" name="redirect" value="<?php echo e($redirect); ?>" />

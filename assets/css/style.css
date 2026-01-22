@@ -1157,3 +1157,26 @@ main.page {
 .loading-overlay.active {
   display: flex;
 }
+
+/* Print styles */
+@media print {
+  .top-nav,
+  .skip-link,
+  .toggle-password,
+  .site-footer,
+  .btn-secondary {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .auth-card,
+  .card-soft {
+    border: 1px solid #ccc;
+    box-shadow: none;
+    background: white;
+  }
+}
