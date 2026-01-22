@@ -47,12 +47,13 @@ A slim PHP-first recreation of Simon Schneegans' Kando pie menu with modern auth
 	-- In MySQL
 	SOURCE pie_menu_unique.sql;
 	```
-3) Configure database credentials in `config.php` (DB_HOST/DB_NAME/DB_USER/DB_PASS).
-4) Start PHP locally:
+3) Copy `.env.example` to `.env` and configure your database credentials.
+4) Configure database credentials in `config.php` (DB_HOST/DB_NAME/DB_USER/DB_PASS).
+5) Start PHP locally:
 	```bash
 	php -S localhost:8080
 	```
-5) Open http://localhost:8080.
+6) Open http://localhost:8080.
    - Visit `index.php` to Login/Register.
    - After login you’re redirected to `home.php` with the pie menu.
 
