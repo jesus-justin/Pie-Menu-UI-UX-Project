@@ -95,13 +95,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form method="post" class="form-grid" novalidate aria-labelledby="register-heading">
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input class="form-control" type="text" id="username" name="username" value="<?php echo e($username); ?>" autocomplete="username" pattern="[A-Za-z0-9_]{3,32}" minlength="3" maxlength="32" aria-describedby="username-hint" aria-required="true" required />
+                    <input class="form-control" type="text" id="username" name="username" value="<?php echo e($username); ?>" autocomplete="username" pattern="[A-Za-z0-9_]{3,32}" minlength="3" maxlength="32" aria-describedby="username-hint" aria-required="true" placeholder="Choose a unique username" required />
                     <span id="username-hint" class="helper" style="display:none;">3-32 characters: letters, numbers, underscore</span>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
                     <div style="position:relative;">
-                        <input class="form-control" type="password" id="password" name="password" autocomplete="new-password" minlength="8" aria-required="true" required />
+                        <input class="form-control" type="password" id="password" name="password" autocomplete="new-password" minlength="8" aria-required="true" placeholder="Create a strong password" required />
                         <button type="button" class="toggle-password" onclick="togglePassword('password')" aria-label="Show password">👁️</button>
                     </div>
                     <span class="helper">At least 8 characters recommended.</span>
@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="form-group">
                     <label for="confirm_password">Confirm Password</label>
                     <div style="position:relative;">
-                        <input class="form-control" type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" minlength="8" aria-required="true" required />
+                        <input class="form-control" type="password" id="confirm_password" name="confirm_password" autocomplete="new-password" minlength="8" aria-required="true" placeholder="Re-enter your password" required />
                         <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')" aria-label="Show password">👁️</button>
                     </div>
                     <span class="helper" id="confirmPasswordHint" aria-live="polite"></span>
