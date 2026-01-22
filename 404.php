@@ -29,7 +29,13 @@ http_response_code(404);
             <div class="badge">404</div>
             <h1>Page Not Found</h1>
             <p style="margin-bottom:24px;">The page you're looking for doesn't exist or has been moved.</p>
-            <a href="index.php" class="btn btn-primary">Go Home</a>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="index.php" class="btn btn-primary">Go Home</a>
+                <a href="javascript:history.back()" class="btn btn-secondary">Go Back</a>
+            </div>
+            <p style="margin-top:32px;color:var(--muted);font-size:0.9rem;">
+                Need help? <a href="index.php" style="color:var(--accent);">Contact Support</a>
+            </p>
         </section>
     </main>
 
