@@ -132,3 +132,36 @@ function isRateLimited(string $key, int $maxAttempts = 5, int $windowSeconds = 3
     $attempts['count']++;
     return $attempts['count'] > $maxAttempts;
 }
+
+/**
+ * Validate password strength
+ */
+function validatePasswordStrength(string $password): array {
+    $errors = [];
+    
+    if (strlen($password) < 8) {
+        $errors[] = 'Password must be at least 8 characters long';
+    }
+    if (!preg_match('/[A-Z]/', $password)) {
+        $errors[] = 'Password must contain at least one uppercase letter';
+    }
+    if (!preg_match('/[a-z]/', $password)) {
+        $errors[] = 'Password must contain at least one lowercase letter';
+    }
+    if (!preg_match('/[0-9]/', $password)) {
+        $errors[] = 'Password must contain at least one number';
+    }
+    
+    return $errors;
+}
+
+/**
+ * Log debug message when debug mode is enabled
+ */
+function debugLog(string $message, array $context = []): void {
+    if (defined('DEBUG_MODE') && DEBUG_MODE) {
+        $timestamp = date('Y-m-d H:i:s');
+        $contextStr = !empty($context) ? ' ' . json_encode($context) : '';
+        error_log("[{$timestamp}] {$message}{$contextStr}");
+    }
+}
