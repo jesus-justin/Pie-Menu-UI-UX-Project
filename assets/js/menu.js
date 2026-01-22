@@ -70,6 +70,12 @@
   const handleActivate = (node) => {
     const target = node?.dataset?.href;
     if (!target) return;
+    
+    // Provide haptic feedback if available
+    if (navigator.vibrate) {
+      navigator.vibrate(50);
+    }
+    
     if (target.startsWith("#")) {
       const el = document.querySelector(target);
       if (el) {
