@@ -148,6 +148,8 @@ main.page {
   z-index: 2;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(20px);
+  user-select: none;
+}
   overflow: hidden;
   display: grid;
   place-items: center;
