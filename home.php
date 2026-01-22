@@ -122,7 +122,9 @@ $menuItems = [
                 <div class="hero-text">
                     <h1>Home & Pie Menu Demo</h1>
                     <p>Explore the interactive radial navigation. Use the menu toggle to spin through the actions and see contextual details.</p>
-                    <p class="helper">Last login: <?php echo htmlspecialchars($lastLoginText, ENT_QUOTES, 'UTF-8'); ?></p>
+                    <?php if ($lastLoginText): ?>
+                        <p class="helper">Last login: <?php echo htmlspecialchars($lastLoginText, ENT_QUOTES, 'UTF-8'); ?></p>
+                    <?php endif; ?>
                     <div class="cta-buttons">
                         <button class="btn btn-primary" type="button" onclick="document.getElementById('menuToggle').click()">Open Menu</button>
                         <a class="btn btn-secondary" href="index.php">Go to Landing</a>
