@@ -10,6 +10,10 @@
   --item-size: 74px;
   --transition: 240ms cubic-bezier(0.4, 0.2, 0.2, 1);
   --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.35);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
   
   /* Enhanced theme tokens */
   --success: #6fffd2;
