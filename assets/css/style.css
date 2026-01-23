@@ -699,6 +699,26 @@ main.page {
     --ring-radius: clamp(120px, 34vw, 200px);
     --item-size: 68px;
   }
+  
+  .menu-toggle {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .toggle-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+  }
 
   .ring-shell {
     width: 100%;
