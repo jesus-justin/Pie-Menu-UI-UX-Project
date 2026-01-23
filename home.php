@@ -12,6 +12,8 @@ $db = getDb();
 $currentUser = getUserById($db, (int) $_SESSION['user_id']);
 $lastLoginText = formatTimestamp($currentUser['last_login'] ?? null);
 $isAdmin = isUserAdmin($db, (int) $_SESSION['user_id']);
+$username = htmlspecialchars($_SESSION['username'] ?? 'User', ENT_QUOTES, 'UTF-8');
+$memberSince = isset($currentUser['created_at']) ? date('M Y', strtotime($currentUser['created_at'])) : 'Unknown';
 
 $menuItems = [
     [
