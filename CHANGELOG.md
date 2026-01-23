@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-01-23
+
+### Added
+- Cache management helper functions
+- Request logging and analytics helpers
+- HTTP header management utilities
+- String manipulation utilities (truncate, slugify, highlight)
+- Form validation and debounce utilities
+- localStorage utility functions with error handling
+- EditorConfig for consistent code style
+- package.json with project metadata
+- Client IP detection helper function
+- Prefers-reduced-motion media query support
+- Menu keyboard navigation focus management
+- aria-live attributes for accessibility
+
+### Changed
+- Database connection timeout configuration
+- CSS custom properties for shadows and border radius
+- Enhanced password strength meter accessibility
+- Improved logout function to clear remember-me cookies
+- Username normalization using cleanInput
+
 ## [1.1.0] - 2026-01-21
 
 ### Added
