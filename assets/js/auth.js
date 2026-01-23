@@ -46,6 +46,7 @@ function bindStrengthMeter(fieldId, barId, labelId) {
     bar.style.setProperty('--strength-fill', `${width}%`);
     bar.style.setProperty('--strength-color', gradient);
     bar.dataset.score = String(score);
+    label.setAttribute('aria-live', 'polite');
     label.textContent = `Strength: ${text}`;
   };
 
