@@ -175,3 +175,30 @@ function debugLog(string $message, array $context = []): void {
         error_log("[{$timestamp}] {$message}{$contextStr}");
     }
 }
+
+/**
+ * Get client IP address
+ */
+function getClientIp(): string {
+    $headers = [
+        'HTTP_CF_CONNECTING_IP', // Cloudflare
+        'HTTP_X_FORWARDED_FOR',
+        'HTTP_X_REAL_IP',
+        'REMOTE_ADDR'
+    ];
+    
+    foreach ($headers as $header) {
+        if (!empty($_SERVER[$header])) {
+            $ip = $_SERVER[$header];
+            // Take first IP if multiple
+            if (strpos($ip, ',') !== false) {
+                $ip = trim(explode(',', $ip)[0]);
+            }
+            if (filter_var($ip, FILTER_VALIDATE_IP)) {
+                return $ip;
+            }
+        }
+    }
+    
+    return '0.0.0.0';
+}
