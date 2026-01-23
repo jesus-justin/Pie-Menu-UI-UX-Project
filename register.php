@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $confirm = $_POST['confirm_password'] ?? '';
     $csrf = $_POST['csrf_token'] ?? null;
 
-    $username = trim($username);
+    $username = cleanInput($username);
     $password = trim($password);
     $confirm = trim($confirm);
 
