@@ -39,6 +39,15 @@ define('SHOW_HERO_SECTION', true);
 define('SHOW_FEATURES_SECTION', true);
 define('ENABLE_ANALYTICS', false);
 
+// Cache settings
+define('CACHE_ENABLED', true);
+define('CACHE_TTL', 3600); // 1 hour
+define('CACHE_DRIVER', 'file'); // 'file', 'redis', 'memory'
+
+// Debug mode
+define('DEBUG_MODE', $_ENV['DEBUG_MODE'] ?? false);
+define('LOG_LEVEL', $_ENV['LOG_LEVEL'] ?? 'error'); // 'debug', 'info', 'warn', 'error'
+
 // Menu settings
 define('MENU_RADIUS', '200px');
 define('MENU_ITEM_SIZE', '74px');
