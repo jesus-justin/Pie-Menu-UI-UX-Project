@@ -80,9 +80,12 @@
       const el = document.querySelector(target);
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
+        // Set focus on target element for keyboard users
+        el.setAttribute('tabindex', '-1');
+        el.focus();
       }
     } else {
-      window.open(target, "_blank", "noopener");
+      window.open(target, "_blank", "noopener,noreferrer");
     }
   };
 
