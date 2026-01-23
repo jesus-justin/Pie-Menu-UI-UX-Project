@@ -1,0 +1,31 @@
+{
+  "name": "pie-menu-ui-ux-project",
+  "version": "1.1.0",
+  "description": "Interactive pie menu with modern landing page and authentication",
+  "keywords": [
+    "pie-menu",
+    "radial-menu",
+    "navigation",
+    "ui",
+    "ux",
+    "interactive",
+    "php",
+    "authentication"
+  ],
+  "author": "Jesus Justin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jesus-justin/Pie-Menu-UI-UX-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jesus-justin/Pie-Menu-UI-UX-Project/issues"
+  },
+  "homepage": "https://github.com/jesus-justin/Pie-Menu-UI-UX-Project#readme",
+  "scripts": {
+    "start": "php -S localhost:8080",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
