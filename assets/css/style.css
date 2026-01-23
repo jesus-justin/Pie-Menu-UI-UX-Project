@@ -240,6 +240,19 @@ main.page {
   flex-direction: column;
   gap: 4px;
   text-align: left;
+  overflow: hidden;
+}
+
+.toggle-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.toggle-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1;
 }
 
 .menu-toggle:hover,
