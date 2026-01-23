@@ -33,10 +33,10 @@ Feature suggestions are welcome! Please:
 
 ### Code Style
 
-- **PHP**: Follow PSR-12 coding standards
-- **JavaScript**: Use ES6+ features, semicolons, 2-space indentation
-- **CSS**: Use meaningful class names, maintain consistent formatting
-- **Comments**: Write clear comments for complex logic
+- **PHP**: Follow PSR-12 coding standards, use type hints
+- **JavaScript**: Use ES6+ features, strict mode, 2-space indentation
+- **CSS**: Use CSS custom properties, mobile-first approach
+- **Comments**: Write clear JSDoc and PHPDoc comments for complex logic
 
 ### Testing Checklist
 
@@ -48,6 +48,9 @@ Before submitting a PR, ensure:
 - [ ] Security best practices followed
 - [ ] Accessibility standards met (WCAG 2.1 AA)
 - [ ] No SQL injection vulnerabilities
+- [ ] Input is properly sanitized and escaped
+- [ ] prefers-reduced-motion is respected
+- [ ] All HTML has proper aria labels
 - [ ] CSRF tokens included in forms
 - [ ] Input sanitization applied
 
