@@ -202,3 +202,22 @@ function getClientIp(): string {
     
     return '0.0.0.0';
 }
+
+/**
+ * Check if request is from bot
+ */
+function isBot(): bool {
+    $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+    $botPatterns = [
+        'bot', 'crawler', 'spider', 'scraper', 'curl', 'wget', 'python',
+        'google', 'bing', 'yahoo', 'baidu', 'yandex'
+    ];
+    
+    foreach ($botPatterns as $pattern) {
+        if (stripos($userAgent, $pattern) !== false) {
+            return true;
+        }
+    }
+    
+    return false;
+}
