@@ -24,7 +24,8 @@
   "homepage": "https://github.com/jesus-justin/Pie-Menu-UI-UX-Project#readme",
   "scripts": {
     "start": "php -S localhost:8080",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "dev": "php -S localhost:8080 2>&1 | tee server.log"
   },
   "devDependencies": {},
   "dependencies": {}
