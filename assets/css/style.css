@@ -9,6 +9,8 @@
   --ring-radius: clamp(140px, 22vw, 240px);
   --item-size: 74px;
   --transition: 240ms cubic-bezier(0.4, 0.2, 0.2, 1);
+  --transition-fast: 120ms cubic-bezier(0.4, 0.2, 0.2, 1);
+  --transition-slow: 480ms cubic-bezier(0.4, 0.2, 0.2, 1);
   --shadow-strong: 0 20px 50px rgba(0, 0, 0, 0.35);
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.2);
   --radius-sm: 8px;
