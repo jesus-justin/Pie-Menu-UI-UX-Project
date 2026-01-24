@@ -3,13 +3,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description" content="Welcome to our innovative platform with intuitive navigation" />
     <meta name="keywords" content="pie menu, radial menu, navigation, interactive UI, UX design" />
     <meta name="author" content="Jesus Justin" />
     <meta name="theme-color" content="#0a0f1f" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="robots" content="index, follow" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>Welcome - Innovative Navigation Experience</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
