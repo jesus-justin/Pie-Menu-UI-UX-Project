@@ -2,6 +2,8 @@
 
 A slim PHP-first recreation of Simon Schneegans' Kando pie menu with modern authentication and security features.
 
+**Version**: 1.2.0 | **License**: MIT | **Author**: Jesus Justin
+
 ---
 
 ## ✨ Features
@@ -12,6 +14,7 @@ A slim PHP-first recreation of Simon Schneegans' Kando pie menu with modern auth
 - Fully responsive design (mobile, tablet, desktop)
 - Beautiful gradient backgrounds with orbital particle effects
 - Zero build step: vanilla PHP + JS + CSS
+- Web Animations API support for smooth effects
 
 ### 🔐 Security & Authentication
 - User registration and login system
@@ -20,6 +23,7 @@ A slim PHP-first recreation of Simon Schneegans' Kando pie menu with modern auth
 - Secure session management with remember-me
 - Rate limiting helpers
 - Input sanitization and validation
+- Bot detection and prevention
 
 ### ♿ Accessibility
 - Keyboard navigation (arrows to cycle, Enter/Space to activate, Escape to close)
@@ -27,6 +31,8 @@ A slim PHP-first recreation of Simon Schneegans' Kando pie menu with modern auth
 - Skip-to-content links
 - Screen reader friendly
 - High contrast focus indicators
+- Respects prefers-reduced-motion
+- Focus management for navigation
 
 ### 🚀 Performance
 - Font preloading
