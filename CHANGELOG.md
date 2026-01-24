@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] - 2026-01-24
+
+### Added
+- Array manipulation utilities (groupBy, flatten, uniqueByKey)
+- Mathematical utility functions (clamp, lerp, mapRange)
+- Color conversion utilities (hex/RGB conversion, luminance, contrast)
+- Event emitter pub/sub system for component communication
+- Environment detection utilities (mobile, iOS, touch, dark mode, connection)
+- File upload validation utilities with safe filename generation
+- HTTP request utilities with retry support and exponential backoff
+- Number formatting utilities (currency, percentage, bytes)
+- Timer and duration utilities with pause/resume functionality
+- Validation rule functions for common patterns
+- Web Animations API wrapper functions
+- Mobile web app meta tags for PWA support
+- Bot detection to prevent automated login attempts
+- EditorConfig rules for HTML, CSS, and JS files
+
+### Changed
+- Enhanced README with version information
+- Added fast and slow transition timing CSS variables
+- Improved login form with bot detection
+
 ## [1.2.0] - 2026-01-23
 
 ### Added
