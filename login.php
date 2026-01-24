@@ -22,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Rate limiting check
     if (isRateLimited('login_attempt', MAX_LOGIN_ATTEMPTS, LOGIN_ATTEMPT_WINDOW)) {
         $errors = 'Too many login attempts. Please try again in a few minutes.';
+    } elseif (isBot()) {
+        // Reject bot login attempts silently
+        exit('Access Denied');
     } else {
-        // TODO: Implement rate limiting to prevent brute force attacks
-        // Consider: IP-based throttling, account lockout after N failed attempts
-        
         $password = $_POST['password'] ?? '';
     $remember = !empty($_POST['remember']);
     $csrf = $_POST['csrf_token'] ?? null;
